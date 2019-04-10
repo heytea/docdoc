@@ -255,8 +255,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mkdocs" title="进阶：mkdocs工具" class="md-nav__link">
-    进阶：mkdocs工具
+  <a href="#mkdocs" title="mkdocs工具使用" class="md-nav__link">
+    mkdocs工具使用
   </a>
   
     <nav class="md-nav">
@@ -272,6 +272,40 @@
           <li class="md-nav__item">
   <a href="#2-mkdocs" title="2. 安装mkdocs" class="md-nav__link">
     2. 安装mkdocs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-mkdocs" title="3. 使用mkdocs" class="md-nav__link">
+    3. 使用mkdocs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mkdocs_1" title="mkdocs部署" class="md-nav__link">
+    mkdocs部署
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-pages" title="Github Pages部署" class="md-nav__link">
+    Github Pages部署
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitlab-ci" title="Gitlab CI部署" class="md-nav__link">
+    Gitlab CI部署
   </a>
   
 </li>
@@ -313,8 +347,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mkdocs" title="进阶：mkdocs工具" class="md-nav__link">
-    进阶：mkdocs工具
+  <a href="#mkdocs" title="mkdocs工具使用" class="md-nav__link">
+    mkdocs工具使用
   </a>
   
     <nav class="md-nav">
@@ -330,6 +364,40 @@
           <li class="md-nav__item">
   <a href="#2-mkdocs" title="2. 安装mkdocs" class="md-nav__link">
     2. 安装mkdocs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-mkdocs" title="3. 使用mkdocs" class="md-nav__link">
+    3. 使用mkdocs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mkdocs_1" title="mkdocs部署" class="md-nav__link">
+    mkdocs部署
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-pages" title="Github Pages部署" class="md-nav__link">
+    Github Pages部署
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitlab-ci" title="Gitlab CI部署" class="md-nav__link">
+    Gitlab CI部署
   </a>
   
 </li>
@@ -359,29 +427,43 @@
                 <h1 id="_1">进阶</h1>
 <p>如果你是非开发或运维，一般只要把本地文档的markdown文档写好，就会自动化生成部署出文档网站了。</p>
 <p>如果你想进一步了解这个文档网站（Docsite）怎么生成的，这里继续看。</p>
-<h2 id="mkdocs">进阶：mkdocs工具</h2>
+<h2 id="mkdocs">mkdocs工具使用</h2>
 <h3 id="1-python">1. 安装Python</h3>
 <h3 id="2-mkdocs">2. 安装mkdocs</h3>
 <pre><code class="shell">pip install mkdocs
 pip install mkdocs-material
-``
-
-### 3. 使用mkdocs
-
-新建文档网站(Docsite)。
-
 </code></pre>
 
-<p>mkdocs new xxxxdocsite</p>
-<pre><code>
-
-运行已有的文档网站（Docsite），在带有mkdocs.yml文件的目录下执行命令：
+<h3 id="3-mkdocs">3. 使用mkdocs</h3>
+<p>新建文档网站(Docsite)。</p>
+<pre><code>mkdocs new xxxxdocsite
 </code></pre>
 
-<p>mkdocs serve
-```</p>
+<p>运行已有的文档网站（Docsite），在带有mkdocs.yml文件的目录下执行命令：</p>
+<pre><code>mkdocs serve
+</code></pre>
+
 <p>运行后，就会持续的网站运行状态，网站地址<a href="http://localhost:8000">http://localhost:8000</a>。</p>
 <p>你的任意markdown文件需改，都会立刻生成到网站上。</p>
+<h2 id="mkdocs_1">mkdocs部署</h2>
+<p>上面，我们使用了命令把文档网站在自己的电脑上运行起来了。</p>
+<pre><code>mkdocs serve
+</code></pre>
+
+<p>那么，我们如何生成出一个<strong>真正的网站</strong>：</p>
+<pre><code>mkdocs build
+</code></pre>
+
+<p>这时候本地就会多了个<strong>site/</strong>目录，这个目录就是最终的HTML网站了。</p>
+<h3 id="github-pages">Github Pages部署</h3>
+<p>如果你的文档放在Github上，并且是在master分支，很简单，直接命令</p>
+<pre><code>mkdocs gh-deploy
+</code></pre>
+
+<p>网站就被部署到Github Pages上了，可以使用https://xxxuser.github.io/xxxproject 查看。</p>
+<h3 id="gitlab-ci">Gitlab CI部署</h3>
+<p>使用Gitlab CI，写.gitlab-ci.yml文件。</p>
+<p>TODO Docker打包</p>
                 
                   
                 
